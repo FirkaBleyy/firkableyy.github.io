@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+}
+body {
+ 
+  font-family: 'Comfortaa', Arial, sans-serif;
+    background-image: url(img/pattern.png);
+    background-size: 128px;
+    image-rendering: pixelated;
+  }
+  img, video  {
+    max-width: 100%;
+    height: auto;
+
+  }
+  .pootis {
+    flex-wrap: wrap;
+  }
+  .levo {
+    background-image: url(img/levo.png), url(img/verx.png),url(img/levo1.png), url(img/verx1.png);
+    background-repeat: repeat-y, no-repeat;
+    background-position: left top, top, right top, bottom ;
+    
+    
+  }
+  .pravo {
+    background-image: url(img/levo.png), url(img/verx.png),url(img/levo1.png), url(img/verx1.png);
+    background-repeat: repeat-y, no-repeat;
+    background-position: left top, top, right top, bottom ;
+    
+    
+  }
+.centered {
+  display: grid;
+  grid-template-columns: 250px 1fr 250px;
+  margin: 0 auto;
+  max-width: 1000px;
+  gap: 10px;
+
+}
+.pootis {
+  grid-column: 1 / -1;
+  display: grid;
+  margin: 0 auto;
+  max-width: 1000px;
+  gap: 10px;
+  padding: 15px;
+  background-color: #ffe6f2;
+  border: #ff7ac6 5px double;
+  display: flex;
+}
+main {
+  padding: 15px;
+  background-color: #ffe6f2;
+  border: #ff7ac6 5px double;
+}
+aside{
+  padding: 15px;
+  background-color: #ffe6f2;
+  border: #ff7ac6 5px double;
+}
+
+  body {
+    font-size: 15px;
+  }
+  .pootis {
+    display: flex;
+  }
+ @media (max-width: 800px) {
+  body {
+    font-size: 14px;
+    margin: 8px;
+  }
+  .centered {
+    grid-template-columns: 1fr; /* всё друг под другом */
+  }
+  main { order: 1; }          /* главный текст первым */
+  .levo { order: 2; }
+  .pravo { order: 3; }
+  .pootis {
+    order: 4;
+    justify-content: center;
+  }
+}
+html { scroll-behavior: smooth;
+}
